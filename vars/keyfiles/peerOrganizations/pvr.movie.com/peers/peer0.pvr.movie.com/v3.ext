@@ -1,4 +1,0 @@
-keyUsage = critical,digitalSignature
-basicConstraints = critical,CA:FALSE
-subjectAltName=IP.1:192.168.1.5,DNS.1:peer0.pvr.movie.com,DNS.2:peer0-pvr-movie-com
-authorityKeyIdentifier = keyid,issuer
