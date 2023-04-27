@@ -1,0 +1,216 @@
+---
+Organizations:
+  - &cbfc-movie-com
+      Name: cbfc-movie-com
+      ID: cbfc-movie-com
+      MSPDir: keyfiles/peerOrganizations/cbfc.movie.com/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('cbfc-movie-com.admin', 'cbfc-movie-com.peer', 'cbfc-movie-com.client')"
+        Writers:
+          Type: Signature
+          Rule: "OR('cbfc-movie-com.admin', 'cbfc-movie-com.client')"
+        Admins:
+          Type: Signature
+          Rule: "OR('cbfc-movie-com.admin')"
+        Endorsement:
+          Type: Signature
+          Rule: "OR('cbfc-movie-com.peer')"
+
+      AnchorPeers:
+      - Host: 192.168.1.5
+        Port: 7004
+  - &inox-movie-com
+      Name: inox-movie-com
+      ID: inox-movie-com
+      MSPDir: keyfiles/peerOrganizations/inox.movie.com/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('inox-movie-com.admin', 'inox-movie-com.peer', 'inox-movie-com.client')"
+        Writers:
+          Type: Signature
+          Rule: "OR('inox-movie-com.admin', 'inox-movie-com.client')"
+        Admins:
+          Type: Signature
+          Rule: "OR('inox-movie-com.admin')"
+        Endorsement:
+          Type: Signature
+          Rule: "OR('inox-movie-com.peer')"
+
+      AnchorPeers:
+      - Host: 192.168.1.5
+        Port: 7006
+  - &orderer
+      Name: orderer
+      ID: orderer
+      MSPDir: keyfiles/ordererOrganizations/orderer/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('orderer.member')"
+        Writers:
+          Type: Signature
+          Rule: "OR('orderer.member')"
+        Admins:
+          Type: Signature
+          Rule: "OR('orderer.admin')"
+  - &pvr-movie-com
+      Name: pvr-movie-com
+      ID: pvr-movie-com
+      MSPDir: keyfiles/peerOrganizations/pvr.movie.com/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('pvr-movie-com.admin', 'pvr-movie-com.peer', 'pvr-movie-com.client')"
+        Writers:
+          Type: Signature
+          Rule: "OR('pvr-movie-com.admin', 'pvr-movie-com.client')"
+        Admins:
+          Type: Signature
+          Rule: "OR('pvr-movie-com.admin')"
+        Endorsement:
+          Type: Signature
+          Rule: "OR('pvr-movie-com.peer')"
+
+      AnchorPeers:
+      - Host: 192.168.1.5
+        Port: 7007
+  - &tokenplatform-movie-com
+      Name: tokenplatform-movie-com
+      ID: tokenplatform-movie-com
+      MSPDir: keyfiles/peerOrganizations/tokenplatform.movie.com/msp
+      Policies:
+        Readers:
+          Type: Signature
+          Rule: "OR('tokenplatform-movie-com.admin', 'tokenplatform-movie-com.peer', 'tokenplatform-movie-com.client')"
+        Writers:
+          Type: Signature
+          Rule: "OR('tokenplatform-movie-com.admin', 'tokenplatform-movie-com.client')"
+        Admins:
+          Type: Signature
+          Rule: "OR('tokenplatform-movie-com.admin')"
+        Endorsement:
+          Type: Signature
+          Rule: "OR('tokenplatform-movie-com.peer')"
+
+      AnchorPeers:
+      - Host: 192.168.1.5
+        Port: 7005
+
+Capabilities:
+  Channel: &ChannelCapabilities
+    V2_0: true
+
+  Orderer: &OrdererCapabilities
+    V2_0: true
+
+  Application: &ApplicationCapabilities
+    V2_0: true
+
+Application: &ApplicationDefaults
+  Organizations:
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+    LifecycleEndorsement:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Endorsement"
+    Endorsement:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Endorsement"
+
+  Capabilities:
+    <<: *ApplicationCapabilities
+
+Orderer: &OrdererDefaults
+  OrdererType: etcdraft
+
+  BatchTimeout: 2s
+
+  BatchSize:
+    MaxMessageCount: 10
+    AbsoluteMaxBytes: 99 MB
+    PreferredMaxBytes: 512 KB
+
+  Addresses:
+  - 192.168.1.5:7012
+  EtcdRaft:
+    Consenters:
+    - Host: 192.168.1.5
+      Port: 7012
+      ClientTLSCert: keyfiles/ordererOrganizations/orderer/orderers/orderer1.orderer/tls/server.crt
+      ServerTLSCert: keyfiles/ordererOrganizations/orderer/orderers/orderer1.orderer/tls/server.crt
+  Organizations:
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+    BlockValidation:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+
+Channel: &ChannelDefaults
+  Policies:
+    Readers:
+      Type: ImplicitMeta
+      Rule: "ANY Readers"
+    Writers:
+      Type: ImplicitMeta
+      Rule: "ANY Writers"
+    Admins:
+      Type: ImplicitMeta
+      Rule: "MAJORITY Admins"
+
+  Capabilities:
+    <<: *ChannelCapabilities
+
+Profiles:
+  OrgChannel:
+    Consortium: SampleConsortium
+    <<: *ChannelDefaults
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+      - *cbfc-movie-com
+      - *inox-movie-com
+      - *pvr-movie-com
+      - *tokenplatform-movie-com
+      Capabilities:
+        <<: *ApplicationCapabilities
+
+  OrdererGenesis:
+    <<: *ChannelDefaults
+    Capabilities:
+      <<: *ChannelCapabilities
+    Orderer:
+      <<: *OrdererDefaults
+      Organizations:
+      - *orderer
+      Capabilities:
+        <<: *OrdererCapabilities
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+      - <<: *orderer
+    Consortiums:
+      SampleConsortium:
+        Organizations:
+        - *cbfc-movie-com
+        - *inox-movie-com
+        - *pvr-movie-com
+        - *tokenplatform-movie-com

@@ -1,0 +1,169 @@
+{
+  "name": "fabric-network",
+  "description": "Generated network configuration file",
+  "version": "0.1",
+  "client": {
+    "organization": "pvr.movie.com",
+    "credentialStore": {
+      "path": "/tmp/hfc-kvs",
+      "cryptoStore": {
+        "path": "/tmp/hfc-cvs"
+      },
+      "wallet": "wallet-name"
+    }
+  },
+  "organizations": {
+    "cbfc.movie.com": {
+      "mspid": "cbfc-movie-com",
+      "peers": [
+        "peer0.cbfc.movie.com"
+      ],
+      "users": {
+        "Admin": {
+          "cert": "/keyfiles/peerOrganizations/cbfc.movie.com/users/Admin@cbfc.movie.com/msp/signcerts/Admin@cbfc.movie.com-cert.pem",
+          "private_key": "/keyfiles/peerOrganizations/cbfc.movie.com/users/Admin@cbfc.movie.com/msp/keystore/priv_sk"
+        }
+      }
+    },
+    "inox.movie.com": {
+      "mspid": "inox-movie-com",
+      "peers": [
+        "peer0.inox.movie.com"
+      ],
+      "users": {
+        "Admin": {
+          "cert": "/keyfiles/peerOrganizations/inox.movie.com/users/Admin@inox.movie.com/msp/signcerts/Admin@inox.movie.com-cert.pem",
+          "private_key": "/keyfiles/peerOrganizations/inox.movie.com/users/Admin@inox.movie.com/msp/keystore/priv_sk"
+        }
+      }
+    },
+    "orderer": {
+      "mspid": "orderer",
+      "orderers": [
+        "orderer1.orderer"
+      ],
+      "users": {
+        "Admin": {
+          "cert": "/keyfiles/ordererOrganizations/orderer/users/Admin@orderer/msp/signcerts/Admin@orderer-cert.pem",
+          "private_key": "/keyfiles/ordererOrganizations/orderer/users/Admin@orderer/msp/keystore/priv_sk"
+        }
+      }
+    },
+    "pvr.movie.com": {
+      "mspid": "pvr-movie-com",
+      "peers": [
+        "peer0.pvr.movie.com"
+      ],
+      "users": {
+        "Admin": {
+          "cert": "/keyfiles/peerOrganizations/pvr.movie.com/users/Admin@pvr.movie.com/msp/signcerts/Admin@pvr.movie.com-cert.pem",
+          "private_key": "/keyfiles/peerOrganizations/pvr.movie.com/users/Admin@pvr.movie.com/msp/keystore/priv_sk"
+        }
+      }
+    },
+    "tokenplatform.movie.com": {
+      "mspid": "tokenplatform-movie-com",
+      "peers": [
+        "peer0.tokenplatform.movie.com"
+      ],
+      "users": {
+        "Admin": {
+          "cert": "/keyfiles/peerOrganizations/tokenplatform.movie.com/users/Admin@tokenplatform.movie.com/msp/signcerts/Admin@tokenplatform.movie.com-cert.pem",
+          "private_key": "/keyfiles/peerOrganizations/tokenplatform.movie.com/users/Admin@tokenplatform.movie.com/msp/keystore/priv_sk"
+        }
+      }
+    }
+  },
+  "orderers": {
+    "orderer1.orderer": {
+      "url": "192.168.1.5:7012",
+      "grpcOptions": {
+        "grpc.ssl_target_name_override": "orderer1.orderer",
+        "grpc-max-send-message-length": 15
+      },
+      "tlsCACerts": {
+        "path": "/keyfiles/ordererOrganizations/orderer/orderers/orderer1.orderer/tls/ca.crt"
+      }
+    }
+  },
+  "peers": {
+    "peer0.cbfc.movie.com": {
+      "url": "192.168.1.5:7004",
+      "grpcOptions": {
+        "grpc.ssl_target_name_override": "peer0.cbfc.movie.com",
+        "grpc-max-send-message-length": 15
+      },
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/cbfc.movie.com/peers/peer0.cbfc.movie.com/tls/ca.crt"
+      }
+    },
+    "peer0.tokenplatform.movie.com": {
+      "url": "192.168.1.5:7005",
+      "grpcOptions": {
+        "grpc.ssl_target_name_override": "peer0.tokenplatform.movie.com",
+        "grpc-max-send-message-length": 15
+      },
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/tokenplatform.movie.com/peers/peer0.tokenplatform.movie.com/tls/ca.crt"
+      }
+    },
+    "peer0.inox.movie.com": {
+      "url": "192.168.1.5:7006",
+      "grpcOptions": {
+        "grpc.ssl_target_name_override": "peer0.inox.movie.com",
+        "grpc-max-send-message-length": 15
+      },
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/inox.movie.com/peers/peer0.inox.movie.com/tls/ca.crt"
+      }
+    },
+    "peer0.pvr.movie.com": {
+      "url": "192.168.1.5:7007",
+      "grpcOptions": {
+        "grpc.ssl_target_name_override": "peer0.pvr.movie.com",
+        "grpc-max-send-message-length": 15
+      },
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/pvr.movie.com/peers/peer0.pvr.movie.com/tls/ca.crt"
+      }
+    }
+  },
+  "certificateAuthorities": {
+    "ca1.cbfc.movie.com": {
+      "url": "https://192.168.1.5:7000",
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/cbfc.movie.com/ca/ca1.cbfc.movie.com-cert.pem"
+      },
+      "httpOptions": { "verify": "false" },
+      "caName": "ca1",
+      "registrar": { "enrollId": "admin", "enrollSecret": "adminpw" }
+    },
+    "ca1.tokenplatform.movie.com": {
+      "url": "https://192.168.1.5:7001",
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/tokenplatform.movie.com/ca/ca1.tokenplatform.movie.com-cert.pem"
+      },
+      "httpOptions": { "verify": "false" },
+      "caName": "ca1",
+      "registrar": { "enrollId": "admin", "enrollSecret": "adminpw" }
+    },
+    "ca1.inox.movie.com": {
+      "url": "https://192.168.1.5:7002",
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/inox.movie.com/ca/ca1.inox.movie.com-cert.pem"
+      },
+      "httpOptions": { "verify": "false" },
+      "caName": "ca1",
+      "registrar": { "enrollId": "admin", "enrollSecret": "adminpw" }
+    },
+    "ca1.pvr.movie.com": {
+      "url": "https://192.168.1.5:7003",
+      "tlsCACerts": {
+        "path": "/keyfiles/peerOrganizations/pvr.movie.com/ca/ca1.pvr.movie.com-cert.pem"
+      },
+      "httpOptions": { "verify": "false" },
+      "caName": "ca1",
+      "registrar": { "enrollId": "admin", "enrollSecret": "adminpw" }
+    }
+  }
+}

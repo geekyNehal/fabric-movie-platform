@@ -1,0 +1,142 @@
+{
+  "Admin@cbfc.movie.com": {
+    "key": "Admin@cbfc.movie.com",
+    "org": "cbfc.movie.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/cbfc.movie.com/users/Admin@cbfc.movie.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/cbfc.movie.com/users/Admin@cbfc.movie.com/msp/keystore/priv_sk",
+    "type": "users"
+  },
+  "Admin@inox.movie.com": {
+    "key": "Admin@inox.movie.com",
+    "org": "inox.movie.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/inox.movie.com/users/Admin@inox.movie.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/inox.movie.com/users/Admin@inox.movie.com/msp/keystore/priv_sk",
+    "type": "users"
+  },
+  "Admin@orderer": {
+    "key": "Admin@orderer",
+    "org": "orderer",
+    "path": "/home/vars/keyfiles/ordererOrganizations/orderer/users/Admin@orderer/msp/keystore/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/orderer/users/Admin@orderer/msp/keystore/priv_sk",
+    "type": "users"
+  },
+  "Admin@pvr.movie.com": {
+    "key": "Admin@pvr.movie.com",
+    "org": "pvr.movie.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/pvr.movie.com/users/Admin@pvr.movie.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/pvr.movie.com/users/Admin@pvr.movie.com/msp/keystore/priv_sk",
+    "type": "users"
+  },
+  "Admin@tokenplatform.movie.com": {
+    "key": "Admin@tokenplatform.movie.com",
+    "org": "tokenplatform.movie.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/tokenplatform.movie.com/users/Admin@tokenplatform.movie.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/tokenplatform.movie.com/users/Admin@tokenplatform.movie.com/msp/keystore/priv_sk",
+    "type": "users"
+  },
+  "cbfc.movie.com": {
+    "key": "cbfc.movie.com",
+    "org": "cbfc.movie.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/cbfc.movie.com/ca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/cbfc.movie.com/ca/priv_sk",
+    "type": "ca"
+  },
+  "cbfc.movie.com.tlsca": {
+    "key": "cbfc.movie.com",
+    "org": "cbfc.movie.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/cbfc.movie.com/tlsca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/cbfc.movie.com/tlsca/priv_sk",
+    "type": "tlsca"
+  },
+  "inox.movie.com": {
+    "key": "inox.movie.com",
+    "org": "inox.movie.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/inox.movie.com/ca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/inox.movie.com/ca/priv_sk",
+    "type": "ca"
+  },
+  "inox.movie.com.tlsca": {
+    "key": "inox.movie.com",
+    "org": "inox.movie.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/inox.movie.com/tlsca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/inox.movie.com/tlsca/priv_sk",
+    "type": "tlsca"
+  },
+  "orderer": {
+    "key": "orderer",
+    "org": "orderer",
+    "path": "/home/vars/keyfiles/ordererOrganizations/orderer/ca/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/orderer/ca/priv_sk",
+    "type": "ca"
+  },
+  "orderer.tlsca": {
+    "key": "orderer",
+    "org": "orderer",
+    "path": "/home/vars/keyfiles/ordererOrganizations/orderer/tlsca/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/orderer/tlsca/priv_sk",
+    "type": "tlsca"
+  },
+  "orderer1.orderer": {
+    "key": "orderer1.orderer",
+    "org": "orderer",
+    "path": "/home/vars/keyfiles/ordererOrganizations/orderer/orderers/orderer1.orderer/msp/keystore/priv_sk",
+    "pkey": "keyfiles/ordererOrganizations/orderer/orderers/orderer1.orderer/msp/keystore/priv_sk",
+    "type": "orderers"
+  },
+  "peer0.cbfc.movie.com": {
+    "key": "peer0.cbfc.movie.com",
+    "org": "cbfc.movie.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/cbfc.movie.com/peers/peer0.cbfc.movie.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/cbfc.movie.com/peers/peer0.cbfc.movie.com/msp/keystore/priv_sk",
+    "type": "peers"
+  },
+  "peer0.inox.movie.com": {
+    "key": "peer0.inox.movie.com",
+    "org": "inox.movie.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/inox.movie.com/peers/peer0.inox.movie.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/inox.movie.com/peers/peer0.inox.movie.com/msp/keystore/priv_sk",
+    "type": "peers"
+  },
+  "peer0.pvr.movie.com": {
+    "key": "peer0.pvr.movie.com",
+    "org": "pvr.movie.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/pvr.movie.com/peers/peer0.pvr.movie.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/pvr.movie.com/peers/peer0.pvr.movie.com/msp/keystore/priv_sk",
+    "type": "peers"
+  },
+  "peer0.tokenplatform.movie.com": {
+    "key": "peer0.tokenplatform.movie.com",
+    "org": "tokenplatform.movie.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/tokenplatform.movie.com/peers/peer0.tokenplatform.movie.com/msp/keystore/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/tokenplatform.movie.com/peers/peer0.tokenplatform.movie.com/msp/keystore/priv_sk",
+    "type": "peers"
+  },
+  "pvr.movie.com": {
+    "key": "pvr.movie.com",
+    "org": "pvr.movie.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/pvr.movie.com/ca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/pvr.movie.com/ca/priv_sk",
+    "type": "ca"
+  },
+  "pvr.movie.com.tlsca": {
+    "key": "pvr.movie.com",
+    "org": "pvr.movie.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/pvr.movie.com/tlsca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/pvr.movie.com/tlsca/priv_sk",
+    "type": "tlsca"
+  },
+  "tokenplatform.movie.com": {
+    "key": "tokenplatform.movie.com",
+    "org": "tokenplatform.movie.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/tokenplatform.movie.com/ca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/tokenplatform.movie.com/ca/priv_sk",
+    "type": "ca"
+  },
+  "tokenplatform.movie.com.tlsca": {
+    "key": "tokenplatform.movie.com",
+    "org": "tokenplatform.movie.com",
+    "path": "/home/vars/keyfiles/peerOrganizations/tokenplatform.movie.com/tlsca/priv_sk",
+    "pkey": "keyfiles/peerOrganizations/tokenplatform.movie.com/tlsca/priv_sk",
+    "type": "tlsca"
+  }
+}
