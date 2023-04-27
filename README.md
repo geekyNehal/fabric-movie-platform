@@ -17,5 +17,4 @@ Blockchain based movie platform on Hyperledger Fabric
 6. After successfull installation of the node modules run enrollAdmin.js and registerUser.js
 7. After successfull registration run invoke.js
 
-
-# HappyCoding
+##
