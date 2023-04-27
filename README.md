@@ -14,7 +14,7 @@ Blockchain based movie platform on Hyperledger Fabric
 3. Ensure golang with version >=19 is installed in the system.
 4. After this just run `deploy.sh`
 5. After successfull installation goto `api-node` and do `npm install`
-6. After successfull installation of the node modules run enrollAdmin.js and registerUser.js
-7. After successfull registration run invoke.js
+6. After successfull installation of the node modules run `enrollAdmin.js` and `registerUser.js`
+7. After successfull registration run `invoke.js`
 
 ##
