@@ -1,20 +1,33 @@
-# fabric-movie-platform
-Blockchain based movie platform on Hyperledger Fabric
+# Fabric Movie Platform
 
-## Prereq Before Running the Project:
+This project is a blockchain-based movie platform built on Hyperledger Fabric. It provides a secure and transparent platform for movie producers and consumers to interact with each other. The project uses Fabric binaries of version 2.4 and is built using Node.js and Golang.
 
-1. Ensure all the binaries and docker images are already present in the system. This project is requires fabric binaries of version 2.4. Following are the fabric binaries which needs to be pulled.
+## Prerequisites
+
+Before running the project, make sure you have the following:
+
+1. Fabric Binaries: Ensure that you have the following Fabric binaries pulled in your system:
     i. `hyperledger/fabric-tools:2.4`
     ii. `hyperledger/fabric-peer:2.4`
     iii. `hyperledger/fabric-orderer:2.4`
     iv. `hyperledger/fabric-ccenv:2.4`
     v. `hyperledger/fabric-baseos:2.4`
-    
-2. Ensure npm and node are installed in the system.
-3. Ensure golang with version >=19 is installed in the system.
-4. After this just run `deploy.sh`
-5. After successfull installation goto `api-node` and do `npm install`
-6. After successfull installation of the node modules run `enrollAdmin.js` and `registerUser.js`
-7. After successfull registration run `invoke.js`
 
-##
+2. Node.js and NPM: Ensure that Node.js and NPM are installed on your system.
+
+3. Golang: Ensure that Golang with version >=19 is installed on your system.
+
+## Running the Project
+
+Follow the below steps to run the project:
+
+1. Run the `deploy.sh` script to deploy the chaincode and start the Fabric network.
+
+2. Navigate to the `api-node` directory and run `npm install` to install the required node modules.
+
+3. Run the `enrollAdmin.js` and `registerUser.js` scripts to enroll the admin and register a new user.
+
+4. Finally, run the `invoke.js` script to invoke the chaincode and start using the Fabric movie platform.
+
+Happy movie watching!
+
