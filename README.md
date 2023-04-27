@@ -7,11 +7,17 @@ This project is a blockchain-based movie platform built on Hyperledger Fabric. I
 Before running the project, make sure you have the following:
 
 1. Fabric Binaries: Ensure that you have the following Fabric binaries pulled in your system:
-    ```bash i. hyperledger/fabric-tools:2.4
+    ```bash 
+    i. hyperledger/fabric-tools:2.4
+    
     ii. hyperledger/fabric-peer:2.4
+    
     iii. hyperledger/fabric-orderer:2.4
+    
     iv. hyperledger/fabric-ccenv:2.4
+    
     v. hyperledger/fabric-baseos:2.4
+    
     ```
 
 2. Node.js and NPM: Ensure that Node.js and NPM are installed on your system.
