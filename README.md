@@ -3,12 +3,12 @@ Blockchain based movie platform on Hyperledger Fabric
 
 ## Prereq Before Running the Project:
 
-1. Ensure all the binaries and docker images are already present in the system. This project is requires fabric binaries of version 2.4. Following are the fabric binaries which needs to be pulled.\n
-    i. `hyperledger/fabric-tools:2.4``\n`
-    ii. `hyperledger/fabric-peer:2.4``\n`
-    iii. `hyperledger/fabric-orderer:2.4`\n
-    iv. `hyperledger/fabric-ccenv:2.4`\n
-    v. `hyperledger/fabric-baseos:2.4`\n
+1. Ensure all the binaries and docker images are already present in the system. This project is requires fabric binaries of version 2.4. Following are the fabric binaries which needs to be pulled.
+    i. `hyperledger/fabric-tools:2.4`
+    ii. `hyperledger/fabric-peer:2.4`
+    iii. `hyperledger/fabric-orderer:2.4`
+    iv. `hyperledger/fabric-ccenv:2.4`
+    v. `hyperledger/fabric-baseos:2.4`
     
 2. Ensure npm and node are installed in the system.
 3. Ensure golang with version >=19 is installed in the system.
