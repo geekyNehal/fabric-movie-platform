@@ -1,13 +1,13 @@
 fabric:
   cas:
-  - "ca1.cbfc.movie.com"
-  - "ca1.tokenplatform.movie.com"
-  - "ca1.inox.movie.com"
+  - "ca1.producer.movie.com"
+  - "ca1.sit.movie.com"
+  - "ca1.investor.movie.com"
   - "ca1.pvr.movie.com"
   peers: 
-  - "peer0.cbfc.movie.com"
-  - "peer0.tokenplatform.movie.com"
-  - "peer0.inox.movie.com"
+  - "peer0.producer.movie.com"
+  - "peer0.sit.movie.com"
+  - "peer0.investor.movie.com"
   - "peer0.pvr.movie.com"
   orderers:
   - "orderer1.orderer"

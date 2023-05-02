@@ -19,7 +19,7 @@ async function main() {
         const ccp = JSON.parse(fs.readFileSync(ccpPath, 'utf8'));
         console.log(`Chaincode running 2 ...`);
         // Create a new CA client for interacting with the CA.
-        const caInfo = ccp.certificateAuthorities['ca1.producer.movie.com'];
+        const caInfo = ccp.certificateAuthorities['ca1.sit.movie.com'];
         console.log(`Chaincode running 3 ...`);
         const ca = new FabricCAServices(caInfo.url);
         console.log(`Chaincode running 4 ...`);
@@ -29,9 +29,9 @@ async function main() {
         console.log(`Wallet path: ${walletPath}`);
         console.log(`Chaincode running 5 ...`);
         // Check to see if we've already enrolled the user.
-        const userIdentity = await wallet.get('producer1');
+        const userIdentity = await wallet.get('platform1');
         if (userIdentity) {
-            console.log('An identity for the user "producer1" already exists in the wallet');
+            console.log('An identity for the user "platform1" already exists in the wallet');
             return;
         }
 
@@ -51,13 +51,13 @@ async function main() {
 
         // Register the user, enroll the user, and import the new identity into the wallet.
         const secret = await ca.register({
-            affiliation: 'org1.department1',
-            enrollmentID: 'producer1',
+            affiliation: 'org2.department1',
+            enrollmentID: 'platform1',
             role: 'client'
         }, adminUser);
         console.log(`Chaincode running 9 ...`);
         const enrollment = await ca.enroll({
-            enrollmentID: 'producer1',
+            enrollmentID: 'platform1',
             enrollmentSecret: secret
         });
         console.log(`Chaincode running 10 ...`);
@@ -66,15 +66,15 @@ async function main() {
                 certificate: enrollment.certificate,
                 privateKey: enrollment.key.toBytes(),
             },
-            mspId: 'producer-movie-com',
+            mspId: 'sit-movie-com',
             type: 'X.509',
         };
         console.log(`Chaincode running 10 ...`);
-        await wallet.put('producer1', x509Identity);
-        console.log('Successfully registered and enrolled admin user "producer1" and imported it into the wallet');
+        await wallet.put('platform1', x509Identity);
+        console.log('Successfully registered and enrolled admin user "platform1" and imported it into the wallet');
 
     } catch (error) {
-        console.error(`Failed to register user "producer1": ${error}`);
+        console.error(`Failed to register user "platform1": ${error}`);
         process.exit(1);
     }
 }

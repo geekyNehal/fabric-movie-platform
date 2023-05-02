@@ -14,11 +14,11 @@ const fs = require('fs');
 async function main() {
     try {
         // load the network configuration
-        const ccpPath = path.resolve(__dirname, '..', '..', 'test-network', 'organizations', 'peerOrganizations', 'org1.example.com', 'connection-org1.json');
+        const ccpPath = path.resolve(__dirname, '..','vars', 'profiles', 'mychannel_connection_for_nodesdk.json');
         const ccp = JSON.parse(fs.readFileSync(ccpPath, 'utf8'));
 
         // Create a new file system based wallet for managing identities.
-        const walletPath = path.join(process.cwd(), 'wallet');
+        const walletPath = path.join(process.cwd(), '..','wallet');
         const wallet = await Wallets.newFileSystemWallet(walletPath);
         console.log(`Wallet path: ${walletPath}`);
 
@@ -38,13 +38,19 @@ async function main() {
         const network = await gateway.getNetwork('mychannel');
 
         // Get the contract from the network.
-        const contract = network.getContract('fabcar');
+        const contract = network.getContract('tokenChaincode');
 
-        // Evaluate the specified transaction.
-        // queryCar transaction - requires 1 argument, ex: ('queryCar', 'CAR4')
-        // queryAllCars transaction - requires no arguments, ex: ('queryAllCars')
-        const result = await contract.evaluateTransaction('queryAllVehicle');
+        //Check Total Supply of Tokens
+        const result = await contract.evaluateTransaction('TotalSupply');
         console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
+
+        //Read details of the tokens
+        const result1 = await contract.evaluateTransaction('OwnerOf','103');
+        console.log(`Transaction has been evaluated, result is: ${result1.toString()}`);
+
+        //Read details of the tokens
+        const result2 = await contract.evaluateTransaction('Name');
+        console.log(`Transaction has been evaluated, result is: ${result2}`);
 
         // Disconnect from the gateway.
         await gateway.disconnect();
